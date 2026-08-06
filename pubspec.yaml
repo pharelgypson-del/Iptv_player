@@ -1,0 +1,53 @@
+name: iptv_player
+description: Lecteur IPTV personnel — sources M3U et Xtream Codes, local-first.
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # State management
+  flutter_riverpod: ^2.5.1
+
+  # Navigation
+  go_router: ^14.2.0
+
+  # Lecteur vidéo (libmpv — bien meilleure tolérance aux flux TS/HLS irréguliers
+  # que video_player natif, qui est pensé pour des sources bien formées type YouTube)
+  media_kit: ^1.1.10
+  media_kit_video: ^1.2.4
+  media_kit_libs_video: ^1.0.4
+
+  # Réseau (client Xtream Codes)
+  dio: ^5.4.3+1
+
+  # Persistance locale — catalogue, favoris, historique (SQLite typé)
+  drift: ^2.18.0
+  sqlite3_flutter_libs: ^0.5.24
+  path_provider: ^2.1.3
+  path: ^1.9.0
+
+  # Stockage sécurisé des identifiants Xtream Codes / URL M3U
+  flutter_secure_storage: ^9.2.2
+
+  # Cache d'images réseau (posters, logos de chaînes)
+  cached_network_image: ^3.3.1
+
+  # Icônes
+  cupertino_icons: ^1.0.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  build_runner: ^2.4.11
+  drift_dev: ^2.18.0
+
+flutter:
+  uses-material-design: true
+  # assets:
+  #   - assets/fonts/
